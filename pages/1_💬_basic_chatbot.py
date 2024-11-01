@@ -17,8 +17,11 @@ class Basic:
         self.openai_model = "gpt-3.5-turbo"
     
     def setup_chain(self):
-        llm = OpenAI(model_name=self.openai_model, temperature=0, streaming=True)
-        chain = ConversationChain(llm=llm, verbose=True)
+        llm = OpenAI(model_name=self.openai_model, temperature=0.8, streaming=True)
+        chain = ConversationChain(
+            llm=llm, 
+            verbose=True
+            )
         return chain
     
     @utils.enable_chat_history

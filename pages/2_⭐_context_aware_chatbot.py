@@ -20,7 +20,7 @@ class ContextChatbot:
     @st.cache_resource
     def setup_chain(_self):
         memory = ConversationBufferMemory()
-        llm = OpenAI(model_name=_self.openai_model, temperature=0, streaming=True)
+        llm = OpenAI(model_name=_self.openai_model, temperature=0.8, streaming=True)
         chain = ConversationChain(llm=llm, memory=memory, verbose=True)
         return chain
     
